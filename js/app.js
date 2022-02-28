@@ -10,9 +10,9 @@ const loadPhones = () =>{
 
 const displayPhones = phones => {
     const displayPhones = document.getElementById('display-phones');
+    const first20Phones = phones.slice(0,18);
     displayPhones.innerHTML = '';
-    phones.forEach(phone => {
-        // console.log(phone);
+    first20Phones.forEach(phone => {
         const div = document.createElement('div');
         div.classList.add('col');
         div.innerHTML = `
@@ -37,8 +37,8 @@ const getSinglePhoneDetails = phoneId => {
 }
 
 const displaySinglePhoneDetails = singlePhone => {
-    // console.log(singlephone);
-    console.log(singlePhone.mainFeatures);
+    console.log(singlePhone.others);
+    
     const  singlePhoneDetails = document.getElementById('single-phone-details')
     singlePhoneDetails.innerHTML = `
     <div id="single-phone" class="row g-0">
@@ -48,10 +48,34 @@ const displaySinglePhoneDetails = singlePhone => {
     <div class="col-md-8">
       <div class="card-body">
         <h5 class="card-title">${singlePhone.name}</h5>
+        <h5 class="card-title">${singlePhone.brand}</h5>
+        <p class="card-text"><small class="text-muted">${singlePhone.releaseDate}</small></p>
         <p>Chipset: ${singlePhone.mainFeatures.chipSet}</p>
         <p>Storage: ${singlePhone.mainFeatures.storage}</p>
         <p>Display-Size: ${singlePhone.mainFeatures.displaySize}</p>
-        <p class="card-text"><small class="text-muted">${singlePhone.releaseDate}</small></p>
+    <div class="btn-group">
+        <button type="button" class="btn btn-info text-white dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Sensers</button>
+        <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="#">${singlePhone.mainFeatures.sensors[0]}</a></li>
+        <li><a class="dropdown-item" href="#">${singlePhone.mainFeatures.sensors[1]}</a></li>
+        <li><a class="dropdown-item" href="#">${singlePhone.mainFeatures.sensors[2]}</a></li>
+        <li><a class="dropdown-item" href="#">${singlePhone.mainFeatures.sensors[3]}</a></li>
+        <li><a class="dropdown-item" href="#">${singlePhone.mainFeatures.sensors[4]}</a></li>
+        <li><a class="dropdown-item" href="#">${singlePhone.mainFeatures.sensors[5]}</a></li>
+        </ul>
+     </div>
+    <div class="btn-group">
+        <button type="button" class="btn btn-info text-white dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Others</button>
+        <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="#">${singlePhone.others.Bluetooth}</a></li>
+        <li><a class="dropdown-item" href="#">${singlePhone.others.GPS}</a></li>
+        <li><a class="dropdown-item" href="#">${singlePhone.others.NFC}</a></li>
+        <li><a class="dropdown-item" href="#">${singlePhone.others.Radio}</a></li>
+        <li><a class="dropdown-item" href="#">${singlePhone.others.USB}</a></li>
+        <li><a class="dropdown-item" href="#">${singlePhone.others.WLAN}</a></li>
+        </ul>
+     </div>
+     
       </div>
     </div>
   </div>
