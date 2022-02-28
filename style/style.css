@@ -2,18 +2,17 @@
 *{
     margin: 0;
     padding: 0;
+    font-family: 'Shippori Antique B1', sans-serif;
 }
 body{
-    font-family: 'Shippori Antique B1', sans-serif;
-     
+    background-color:rgba(127, 255, 212, 0.822);
 }
-#single-phone{
-    border: 2px solid cornflowerblue;
-    border-radius: 5px;
-    padding: 10px;
-}
+
 .cards{
-   border: 2px solid cornflowerblue;
+    background-color: aliceblue;
+    box-shadow:inset 5px 5px 12px #ffffff,
+    5px 5px 12px rgba(0, 0, 0,.16);
+    border: 3px solid #ffffff;
    padding: 10px;
    border-radius: 15px;
 }
@@ -22,8 +21,9 @@ body{
 }
 #error{
     display: none;
-    color: red;
-    background-color: rgba(255, 0, 0, 0.199);
+    color:coral;
+    background-color:#ffffff;
     width: 50%;
+    border: 2px solid coral;
     border-radius: 50px;
 }
