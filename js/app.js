@@ -1,14 +1,28 @@
 const loadPhones = () =>{
+    const  singlePhoneDetails = document.getElementById('single-phone-details')
+    singlePhoneDetails.innerHTML = '';
+    const displayPhones = document.getElementById('display-phones');
     const searchField = document.getElementById('search-field')
-    const searchText = searchField.value;
-     searchField.value = '';
+    const searchText = searchField.value.toLowerCase();
+    searchField.value = '';
+    const error = document.getElementById('error')
+    if(searchText === ''){
+         error.style.display = 'block';
+    }
+    if(searchText !== 'oppo' && searchText !== 'iphone' && searchText !== 'huawei' && searchText !== 'samsung'){
+        error.style.display = 'block';
+        displayPhones.innerHTML = '';
+    }
+    else{
+        error.style.display = 'none';
      const url = `https://openapi.programming-hero.com/api/phones?search=${searchText}`
      fetch(url)
      .then(res => res.json())
-     .then(data => displayPhones(data.data))
+     .then(data => displayAllPhones(data.data))
+    }
 }
 
-const displayPhones = phones => {
+const displayAllPhones = phones => {
     const displayPhones = document.getElementById('display-phones');
     const first20Phones = phones.slice(0,18);
     displayPhones.innerHTML = '';
@@ -38,7 +52,7 @@ const getSinglePhoneDetails = phoneId => {
 
 const displaySinglePhoneDetails = singlePhone => {
     console.log(singlePhone.others);
-    
+     
     const  singlePhoneDetails = document.getElementById('single-phone-details')
     singlePhoneDetails.innerHTML = `
     <div id="single-phone" class="row g-0">
@@ -54,7 +68,7 @@ const displaySinglePhoneDetails = singlePhone => {
         <p>Storage: ${singlePhone.mainFeatures.storage}</p>
         <p>Display-Size: ${singlePhone.mainFeatures.displaySize}</p>
     <div class="btn-group">
-        <button type="button" class="btn btn-info text-white dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Sensers</button>
+        <button type="button" class="btn btn-info text-white dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Sensors</button>
         <ul class="dropdown-menu">
         <li><a class="dropdown-item" href="#">${singlePhone.mainFeatures.sensors[0]}</a></li>
         <li><a class="dropdown-item" href="#">${singlePhone.mainFeatures.sensors[1]}</a></li>
@@ -79,5 +93,5 @@ const displaySinglePhoneDetails = singlePhone => {
       </div>
     </div>
   </div>
-    `
+    `;
 }
