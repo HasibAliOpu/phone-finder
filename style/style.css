@@ -1,4 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Shippori+Antique+B1&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+}
 body{
     font-family: 'Shippori Antique B1', sans-serif;
+     
+}
+#single-phone{
+    border: 2px solid cornflowerblue;
+    border-radius: 5px;
+    padding: 10px;
+}
+.cards{
+   border: 2px solid cornflowerblue;
+   padding: 10px;
+   border-radius: 15px;
+}
+.cards img {
+    width: 70%;
 }

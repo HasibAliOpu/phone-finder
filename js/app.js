@@ -16,12 +16,12 @@ const displayPhones = phones => {
         const div = document.createElement('div');
         div.classList.add('col');
         div.innerHTML = `
-        <div class="card h-100 w-75">
+        <div class="card h-100 cards">
                 <img  src="${phone.image}" class="card-img-top" alt="...">
                 <div class="card-body">
                 <h5>${phone.phone_name}</h5>
                 <p>${phone.brand}</p>
-                <button onclick="getSinglePhoneDetails('${phone.slug}')" type="button" class="btn btn-info">Details</button>
+                <button onclick="getSinglePhoneDetails('${phone.slug}')" type="button" class="btn btn-info text-white">Details</button>
                 </div>
               </div>
         `;
@@ -41,7 +41,7 @@ const displaySinglePhoneDetails = singlePhone => {
     console.log(singlePhone.mainFeatures);
     const  singlePhoneDetails = document.getElementById('single-phone-details')
     singlePhoneDetails.innerHTML = `
-    <div class="row g-0">
+    <div id="single-phone" class="row g-0">
     <div class="col-md-4">
       <img src="${singlePhone.image}" class="img-fluid rounded-start" alt="...">
     </div>
