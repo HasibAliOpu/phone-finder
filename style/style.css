@@ -8,7 +8,7 @@ body{
     background-color:rgba(127, 255, 212, 0.822);
 }
 
-.cards{
+.all-cards{
     background-color: aliceblue;
     box-shadow:inset 5px 5px 12px #ffffff,
     5px 5px 12px rgba(0, 0, 0,.16);
@@ -16,14 +16,14 @@ body{
    padding: 10px;
    border-radius: 15px;
 }
-.cards img {
+.all-cards img {
     width: 70%;
 }
-#error{
+#error-text{
     display: none;
-    color:coral;
-    background-color:#ffffff;
+    color:red;
+    font-size: 30px;
+    font-weight: 900;
     width: 50%;
-    border: 2px solid coral;
     border-radius: 50px;
 }
