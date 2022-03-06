@@ -68,30 +68,30 @@ const displaySinglePhoneDetails = singlePhone => {
     <div class="col-md-8">
       <div class="card-body">
         <h5 class="card-title">${singlePhone.brand} ${singlePhone.name}</h5>
-        <p class="card-text"><small class="text-muted">${singlePhone?.releaseDate}</small></p>
-        <p>Chipset: ${singlePhone.mainFeatures.chipSet}</p>
-        <p>Storage: ${singlePhone.mainFeatures.storage}</p>
-        <p>Display-Size: ${singlePhone.mainFeatures.displaySize}</p>
+        <p class="card-text"><small class="text-muted">${singlePhone.releaseDate ?singlePhone.releaseDate : 'No Release Date Found' }</small></p>
+        <p>Chipset: ${singlePhone.mainFeatures.chipSet ? singlePhone.mainFeatures.chipSet : 'Data Not Available'}</p>
+        <p>Storage: ${singlePhone.mainFeatures.storage ? singlePhone.mainFeatures.storage : 'Data Not Available'}</p>
+        <p>Display-Size: ${singlePhone.mainFeatures.displaySize ? singlePhone.mainFeatures.displaySize : 'Data Not Available'}</p>
     <div class="btn-group">
         <button type="button" class="btn btn-info text-white dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Sensors</button>
         <ul class="dropdown-menu">
-        <li class="dropdown-item">${singlePhone.mainFeatures.sensors[0]}</li>
-        <li class="dropdown-item">${singlePhone.mainFeatures.sensors[1]} </li>
-        <li class="dropdown-item">${singlePhone.mainFeatures.sensors[2]}</li>
-        <li class="dropdown-item">${singlePhone.mainFeatures.sensors[3]}</li>
-        <li class="dropdown-item">${singlePhone.mainFeatures.sensors[4]}</li>
-        <li class="dropdown-item">${singlePhone.mainFeatures.sensors[5]}</li>
+        <li class="dropdown-item">${singlePhone.mainFeatures.sensors[0] ? singlePhone.mainFeatures.sensors[0] : 'Data Not Available'}</li>
+        <li class="dropdown-item">${singlePhone.mainFeatures.sensors[1] ? singlePhone.mainFeatures.sensors[1] : 'Data Not Available'}</li>
+        <li class="dropdown-item">${singlePhone.mainFeatures.sensors[2] ? singlePhone.mainFeatures.sensors[2] : 'Data Not Available'}</li>
+        <li class="dropdown-item">${singlePhone.mainFeatures.sensors[3] ? singlePhone.mainFeatures.sensors[3] : 'Data Not Available'}</li>
+        <li class="dropdown-item">${singlePhone.mainFeatures.sensors[4] ? singlePhone.mainFeatures.sensors[4] : 'Data Not Available'}</li>
+        <li class="dropdown-item">${singlePhone.mainFeatures.sensors[5] ? singlePhone.mainFeatures.sensors[5] : 'Data Not Available'}</li>
         </ul>
      </div>
     <div class="btn-group">
         <button type="button" class="btn btn-info text-white dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Others</button>
         <ul class="dropdown-menu">
-        <li class="dropdown-item">Bluetooth: ${singlePhone?.others?.Bluetooth}</li>
-        <li class="dropdown-item">GPS: ${singlePhone?.others?.GPS}</li>
-        <li class="dropdown-item">NFC: ${singlePhone?.others?.NFC}</li>
-        <li class="dropdown-item">Radio: ${singlePhone?.others?.Radio}</li>
-        <li class="dropdown-item">USB: ${singlePhone?.others?.USB}</li>
-        <li class="dropdown-item">WLAN: ${singlePhone?.others?.WLAN}</li>
+        <li class="dropdown-item">Bluetooth: ${singlePhone?.others?.Bluetooth ? singlePhone?.others?.Bluetooth : 'Data Not Available'}</li>
+        <li class="dropdown-item">GPS: ${singlePhone?.others?.GPS ? singlePhone?.others?.GPS : 'Data Not Available'}</li>
+        <li class="dropdown-item">NFC: ${singlePhone?.others?.NFC ? singlePhone?.others?.NFC : 'Data Not Available'}</li>
+        <li class="dropdown-item">Radio: ${singlePhone?.others?.Radio ? singlePhone?.others?.Radio : 'Data Not Available'}</li>
+        <li class="dropdown-item">USB: ${singlePhone?.others?.USB ? singlePhone?.others?.USB : 'Data Not Available'}</li>
+        <li class="dropdown-item">WLAN: ${singlePhone?.others?.WLAN ? singlePhone?.others?.WLAN : 'Data Not Available'}</li>
         </ul>
      </div>
      
