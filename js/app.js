@@ -101,3 +101,6 @@ const displaySinglePhoneDetails = singlePhone => {
     `;
 }
 console.log('Hello');
+console.log('Hello');
+console.log('Hello');
+console.log('Hello');
