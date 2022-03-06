@@ -100,3 +100,4 @@ const displaySinglePhoneDetails = singlePhone => {
   </div>
     `;
 }
+console.log('Hello');
